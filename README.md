@@ -12,8 +12,16 @@ Once python is setup on your machine, install chalice using the pip3 install com
 
 <pre>pip3 install chalice</pre>
 
+## AWS Configruation
+
 ## Project Creation
-Chalice has a create-project command that functions similar to yarn's create-react-app command. It will generate some boilerplate code in the app.py and create a local git repo. 
+Chalice has a new project command that functions similar to yarn's create-react-app command. It will generate some boilerplate code in the app.py
+. 
 
-<pre>chalice create-project {directory}</pre>
+<pre>chalice new-project {directory}</pre>
 
+The generated app.py will contain an example of the api endpoint annotation, otherwise it functions similar to regular python.
+
+## Deploy Project
+
+To deploy the project, if the AWS credientials are configured, 
