@@ -14,6 +14,18 @@ Once python is setup on your machine, install chalice using the pip3 install com
 
 ## AWS Configruation
 
+I configured a user using AWS IAM process to be an admin, and plugged the information into the below command. I used us-west-1 as my region. 
+
+<pre>
+$ mkdir ~/.aws
+$ cat >> ~/.aws/config
+[default]
+aws_access_key_id=YOUR_ACCESS_KEY_HERE
+aws_secret_access_key=YOUR_SECRET_ACCESS_KEY
+region=YOUR_REGION (such as us-west-2, us-west-1, etc)
+</pre>
+
+
 ## Project Creation
 Chalice has a new project command that functions similar to yarn's create-react-app command. It will generate some boilerplate code in the app.py
 . 
@@ -46,9 +58,11 @@ curl https://sf5oz1x80a.execute-api.us-west-1.amazonaws.com/api/fizzbuzz/{number
 </pre>
 It grabs the number out of the endpoint and parses it into an int object, applies the rules, and returns the results json. 
 
-The second example I included a few endpoint properties in the endpoint annotation such that one could only perform a POST on it and that it would expect application-content/json in the header. This also allowed the call to pass the request in as additional data in the json format 
+The second example I included a few endpoint properties in the endpoint annotation such that one could only perform a POST on it and that it would expect application-content/json in the header. This also allowed the call to pass the request in as additional data in the json format.
 <pre>
 
 curl -X POST -H "Application/json" -H "Content-type: application/json" https://sf5oz1x80a.execute-api.us-west-1.amazonaws.com/api/fizzBuzzCalc/ -d '{ "request" : "6" }'
 
 </pre>
+
+I used <a href='https://chalice.readthedocs.io/en/latest/quickstart.html'> this quickstart guide</a> to model how to get started. It includes information about adding security and other properties to endpoints. 
