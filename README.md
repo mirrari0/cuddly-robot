@@ -61,7 +61,7 @@ It grabs the number out of the endpoint and parses it into an int object, applie
 The second example I included a few endpoint properties in the endpoint annotation such that one could only perform a POST on it and that it would expect application-content/json in the header. This also allowed the call to pass the request in as additional data in the json format.
 <pre>
 
-curl -X POST -H "Application/json" -H "Content-type: application/json" https://sf5oz1x80a.execute-api.us-west-1.amazonaws.com/api/fizzBuzzCalc/ -d '{ "request" : "6" }'
+curl -X POST -H "Application/json" -H "Content-type: application/json" https://sf5oz1x80a.execute-api.us-west-1.amazonaws.com/api/fizzBuzzCalc/ -d '{ "request" : "{number}" }'
 
 </pre>
 
