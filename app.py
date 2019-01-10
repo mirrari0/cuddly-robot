@@ -8,7 +8,7 @@ app = Chalice(app_name='fizzbuzzcalculator')
 def index():
     return {'team-sugar-skulls': ['tori','jared','steve','anthony','anthony']}
 
-@app.route('/fizzbuzz/{number}')
+@app.route('/fizzbuzz/{number}', methods=['POST','GET'], cors=True)
 def fizzbuzz(number):
     return { 'result' : fizzbuzzCalculator(int(number)) }
 
